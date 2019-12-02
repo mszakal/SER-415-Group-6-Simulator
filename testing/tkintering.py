@@ -4,31 +4,31 @@ def calculate():
     forwardMultiplier = .7
     rightTurnMultiplier = .2
     leftTurnMultiplier = .1
-    northOut = 0
-    southOut = 0
-    eastOut = 0
-    westOut = 0
+    northOut = 0.0
+    southOut = 0.0
+    eastOut = 0.0
+    westOut = 0.0
 
     if model.get() == 1:
-        northOut = southIn.get() * forwardMultiplier
-        southOut = northIn.get() * forwardMultiplier
-        eastOut = southIn.get() * rightTurnMultiplier
-        westOut = northIn.get() * rightTurnMultiplier
+        northOut = float(southIn.get()) * forwardMultiplier
+        southOut = float(northIn.get()) * forwardMultiplier
+        eastOut = float(southIn.get()) * rightTurnMultiplier
+        westOut = float(northIn.get()) * rightTurnMultiplier
     elif model.get() == 2:
-        northOut = (westIn.get() * leftTurnMultiplier) + (eastIn.get() * rightTurnMultiplier)
-        southOut = (eastIn.get() * leftTurnMultiplier) + (westIn.get() * rightTurnMultiplier)
-        eastOut = southIn.get() * rightTurnMultiplier
-        westOut = northIn.get() * rightTurnMultiplier
+        northOut = (float(westIn.get()) * leftTurnMultiplier) + (float(eastIn.get()) * rightTurnMultiplier)
+        southOut = (float(eastIn.get()) * leftTurnMultiplier) + (float(westIn.get()) * rightTurnMultiplier)
+        eastOut = float(southIn.get()) * rightTurnMultiplier
+        westOut = float(northIn.get()) * rightTurnMultiplier
     elif model.get() == 3:
-        northOut = westIn.get() * rightTurnMultiplier
-        southOut = eastIn.get() * rightTurnMultiplier
-        eastOut = (southIn.get() * leftTurnMultiplier) + (northIn.get() * rightTurnMultiplier)
-        westOut = (northIn.get() * leftTurnMultiplier) + (southIn.get() * rightTurnMultiplier)
+        northOut = float(westIn.get()) * rightTurnMultiplier
+        southOut = float(eastIn.get()) * rightTurnMultiplier
+        eastOut = (float(southIn.get()) * leftTurnMultiplier) + (float(northIn.get()) * rightTurnMultiplier)
+        westOut = (float(northIn.get()) * leftTurnMultiplier) + (float(southIn.get()) * rightTurnMultiplier)
     elif model.get() == 4:
-        northOut = eastIn.get() * rightTurnMultiplier
-        southOut = westIn.get() * rightTurnMultiplier
-        eastOut = westIn.get() * forwardMultiplier
-        westOut = eastIn.get() * forwardMultiplier
+        northOut = float(eastIn.get()) * rightTurnMultiplier
+        southOut = float(westIn.get()) * rightTurnMultiplier
+        eastOut = float(westIn.get()) * forwardMultiplier
+        westOut = float(eastIn.get()) * forwardMultiplier
 
     print 'north outflow: ', northOut
     print 'south outflow: ', southOut

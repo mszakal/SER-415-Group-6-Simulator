@@ -1,4 +1,4 @@
-import Tkinter
+import tkinter
 
 def calculate():
     forwardMultiplier = .7
@@ -35,42 +35,42 @@ def calculate():
     eastOutDisp.configure(text = str(eastOut))
     westOutDisp.configure(text = str(westOut))
 
-from Tkinter import *
-root = Tkinter.Tk()
+from tkinter import *
+root = tkinter.Tk()
 
 model = IntVar() 
-Tkinter.Radiobutton(root, text='Model 1', variable=model, value=1).grid(row=0)
-Tkinter.Radiobutton(root, text='Model 2', variable=model, value=2).grid(row=1)
-Tkinter.Radiobutton(root, text='Model 3', variable=model, value=3).grid(row=2) 
-Tkinter.Radiobutton(root, text='Model 4', variable=model, value=4).grid(row=3)
+tkinter.Radiobutton(root, text='Model 1', variable=model, value=1).grid(row=0)
+tkinter.Radiobutton(root, text='Model 2', variable=model, value=2).grid(row=1)
+tkinter.Radiobutton(root, text='Model 3', variable=model, value=3).grid(row=2) 
+tkinter.Radiobutton(root, text='Model 4', variable=model, value=4).grid(row=3)
 
-Tkinter.Label(root, text = 'Inflow from North').grid(row=0, column=1, sticky=E)
-Tkinter.Label(root, text = 'Inflow from South').grid(row=1, column=1, sticky=E)
-Tkinter.Label(root, text = 'Inflow from East').grid(row=2, column=1, sticky=E)
-Tkinter.Label(root, text = 'Inflow from West').grid(row=3, column=1, sticky=E)
+tkinter.Label(root, text = 'Inflow from North').grid(row=0, column=1, sticky=E)
+tkinter.Label(root, text = 'Inflow from South').grid(row=1, column=1, sticky=E)
+tkinter.Label(root, text = 'Inflow from East').grid(row=2, column=1, sticky=E)
+tkinter.Label(root, text = 'Inflow from West').grid(row=3, column=1, sticky=E)
 
-northIn = Tkinter.Entry(root)
+northIn = tkinter.Entry(root)
 northIn.grid(row=0, column=2)
-southIn = Tkinter.Entry(root)
+southIn = tkinter.Entry(root)
 southIn.grid(row=1, column=2)
-eastIn = Tkinter.Entry(root)
+eastIn = tkinter.Entry(root)
 eastIn.grid(row=2, column=2)
-westIn = Tkinter.Entry(root)
+westIn = tkinter.Entry(root)
 westIn.grid(row=3, column=2)
 
-Tkinter.Button(root, text = 'Calculate', command = calculate).grid(row=4, column=1, pady=4)
+tkinter.Button(root, text = 'Calculate', command = calculate).grid(row=4, column=1, pady=4)
 
-Tkinter.Label(root, text='Northbound Output: ').grid(row=5, column=0, sticky=E)
-northOutDisp = Tkinter.Label(root)
+tkinter.Label(root, text='Northbound Output: ').grid(row=5, column=0, sticky=E)
+northOutDisp = tkinter.Label(root)
 northOutDisp.grid(row=5, column=1)
-Tkinter.Label(root, text='Southbound Output: ').grid(row=6, column=0, sticky=E)
-southOutDisp = Tkinter.Label(root)
+tkinter.Label(root, text='Southbound Output: ').grid(row=6, column=0, sticky=E)
+southOutDisp = tkinter.Label(root)
 southOutDisp.grid(row=6, column=1)
-Tkinter.Label(root, text='Eastbound Output: ').grid(row=7, column=0, sticky=E)
-eastOutDisp = Tkinter.Label(root)
+tkinter.Label(root, text='Eastbound Output: ').grid(row=7, column=0, sticky=E)
+eastOutDisp = tkinter.Label(root)
 eastOutDisp.grid(row=7, column=1)
-Tkinter.Label(root, text='Westbound Output: ').grid(row=8, column=0, sticky=E)
-westOutDisp = Tkinter.Label(root)
+tkinter.Label(root, text='Westbound Output: ').grid(row=8, column=0, sticky=E)
+westOutDisp = tkinter.Label(root)
 westOutDisp.grid(row=8, column=1)
 
 root.mainloop()

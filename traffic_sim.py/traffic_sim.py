@@ -37,6 +37,7 @@ def traffic():
     car2 = Car(xp+100,525)
     car3 = Car(xp+50,525)
     signal_east = Signal(380,520)
+
     #signal_north = Signal(510,350)
 
     #this will be aligning the cars into each other

@@ -1,4 +1,51 @@
 import tkinter
+def change_pic(labelname, picture):
+    photo1 = ImageTk.PhotoImage(Image.open("model1.png"))
+    labelname.configure(image=photo1)
+    labelname.photo = photo1
+
+    
+    
+def model1():
+    novi = Toplevel()
+    canvas = Canvas(novi, width = 300, height = 200)
+    canvas.pack(expand = YES, fill = BOTH)
+    gif1 = PhotoImage(file = 'model_images/model1.png')
+                                #image not visual
+    canvas.create_image(50, 10, image = gif1, anchor = NW)
+    #assigned the gif1 to the canvas object
+    canvas.gif1 = gif1
+    
+def model2():
+    novi = Toplevel()
+    canvas = Canvas(novi, width = 300, height = 200)
+    canvas.pack(expand = YES, fill = BOTH)
+    gif1 = PhotoImage(file = 'model_images/model2.png')
+                            #image not visual
+    canvas.create_image(50, 10, image = gif1, anchor = NW)
+    #assigned the gif1 to the canvas object
+    canvas.gif1 = gif1
+    
+def model3():
+    novi = Toplevel()
+    canvas = Canvas(novi, width = 300, height = 200)
+    canvas.pack(expand = YES, fill = BOTH)
+    gif1 = PhotoImage(file = 'model_images/model3.png')
+                            #image not visual
+    canvas.create_image(50, 10, image = gif1, anchor = NW)
+    #assigned the gif1 to the canvas object
+    canvas.gif1 = gif1
+    
+def model4():
+    novi = Toplevel()
+    canvas = Canvas(novi, width = 300, height = 200)
+    canvas.pack(expand = YES, fill = BOTH)
+    gif1 = PhotoImage(file = 'model_images/model4.png')
+                            #image not visual
+    canvas.create_image(50, 10, image = gif1, anchor = NW)
+    #assigned the gif1 to the canvas object
+    canvas.gif1 = gif1
+    
 
 def calculate():
     forwardMultiplier = .7
@@ -36,13 +83,22 @@ def calculate():
     westOutDisp.configure(text = str(westOut))
 
 from tkinter import *
+import tkinter as tk
+from tkinter import ttk
 root = tkinter.Tk()
+root.geometry('1000x800')
+DEFAULT = "model_images/model1.png"
+MODEL2 = "model_images/model2.png"
+MODEL3 = "model_images/model3.png"
+MODEL4 = "model_images/model4.png"
 
-model = IntVar() 
-tkinter.Radiobutton(root, text='Model 1', variable=model, value=1).grid(row=0)
-tkinter.Radiobutton(root, text='Model 2', variable=model, value=2).grid(row=1)
-tkinter.Radiobutton(root, text='Model 3', variable=model, value=3).grid(row=2) 
-tkinter.Radiobutton(root, text='Model 4', variable=model, value=4).grid(row=3)
+model = IntVar()
+#photo_filepath = tk.StringVar()
+
+model1 = tkinter.Radiobutton(root, text='Model 1', variable=model, value=1, command=model1).grid(row=0)
+model2 = tkinter.Radiobutton(root, text='Model 2', variable=model, value=2, command=model2).grid(row=1)
+model3 = tkinter.Radiobutton(root, text='Model 3', variable=model, value=3, command=model3).grid(row=2)
+model4 = tkinter.Radiobutton(root, text='Model 4', variable=model, value=4, command=model4).grid(row=3)
 
 tkinter.Label(root, text = 'Inflow from North').grid(row=0, column=1, sticky=E)
 tkinter.Label(root, text = 'Inflow from South').grid(row=1, column=1, sticky=E)
@@ -72,5 +128,4 @@ eastOutDisp.grid(row=7, column=1)
 tkinter.Label(root, text='Westbound Output: ').grid(row=8, column=0, sticky=E)
 westOutDisp = tkinter.Label(root)
 westOutDisp.grid(row=8, column=1)
-
 root.mainloop()
